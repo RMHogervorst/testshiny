@@ -19,5 +19,5 @@ setAccountInfo(name   = error_on_missing_name("SHINY_ACC_NAME"),
 deployApp(
     appFiles = c("app.R" #, "renv/activate.R","renv.lock",'.Rprofile'
                        ),
-    appName = error_on_missing_name("MASTER_NAME"),
+    appName = error_on_missing_name("MASTERNAME"),
     appTitle = "shinyapplication")
