@@ -2,9 +2,21 @@
 
 
 This is the demo shiny app and is very lame, but the major point is 
-the github actions that are used here to deploy after each commit in master.
+the github actions that are used here to deploy after each commit in main/master.
+
+This current version is pretty ugly, I could have used a script to set it up.
 
 
+
+In your github repo set up your secrets:
+
+```
+SHINY_ACC_NAME
+TOKEN
+SECRET
+MASTERNAME
+TESTNAME
+```
 
 
 test docker image locally with 
