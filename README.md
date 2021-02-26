@@ -8,16 +8,21 @@ This current version is pretty ugly, I could have used a script to set it up.
 
 
 
-In your github repo set up your secrets:
+In your github repo set up your secrets SHINY_ACC_NAME, TOKEN,SECRET,MASTERNAME, and TESTNAME.
 
+In your local .Renviron file 
 ```
-SHINY_ACC_NAME
-TOKEN
-SECRET
-MASTERNAME
-TESTNAME
+SHINY_ACC_NAME="youraccountname"
+TOKEN="atokenyougotfromshinyapps.io"
+SECRET="asecretyourecievedfromshinyapps.io"
+MASTERNAME="thiswillbethelastpartoftheurl"
+TESTNAME="thiswillbethelastpartoftheurl"
 ```
 
+Your master/main url will be `https://{SHINY_ACC_NAME}.shinyapps.io/{MASTERNAME}/`
+and for PRs the URL will be `https://{SHINY_ACC_NAME}.shinyapps.io/{TESTNAME}/`
+
+Set secrets in github in repository secrets
 ![](howtosecrets.png)
 
 
@@ -29,6 +34,3 @@ IMAGENAME=<NAMETHISSOMETHING>
 docker build -t $IMAGENAME . 
 docker run --env-file .Renviron $IMAGENAME
 ```
-
-REference material
-- https://jarrettmeyer.com/2019/04/25/publishing-to-shinyapps-github-travis-ci
