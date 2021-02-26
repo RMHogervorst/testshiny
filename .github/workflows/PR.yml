@@ -26,4 +26,4 @@ jobs:
         run: docker build -t pullrequestimage . 
         
       - name: execute
-        run: docker run -e SHINY_ACC_NAME=${{secrets.SHINY_ACC_NAME}} -e TOKEN=${{secrets.TOKEN}} -e SECRET=${{secrets.SECRET}} -e MASTERNAME=${{secrets.TESTNAME}} pullrequestimage
+        run: docker run -e SHINY_ACC_NAME=${{secrets.SHINY_ACC_NAME}} -e TOKEN=${{secrets.TOKEN}} -e SECRET=${{secrets.SECRET}} -e MASTERNAME=${{secrets.TEST_NAME}} pullrequestimage
