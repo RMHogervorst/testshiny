@@ -3,8 +3,10 @@
 
 This is the demo shiny app and is very lame, but the major point is 
 the github actions that are used here to deploy after each commit in main/master.
+and ends up at `https://rmhogervorst.shinyapps.io/mastershiny/`
+AND it deploys at every PR and pushes to a different app. `https://rmhogervorst.shinyapps.io/testshiny/`
 
-This current version is pretty ugly, I could have used a script to set it up.
+This current version is pretty ugly, but it works. 
 
 
 
