@@ -18,6 +18,9 @@ MASTERNAME
 TESTNAME
 ```
 
+![](howtosecrets.png)
+
+
 
 test docker image locally with 
 
