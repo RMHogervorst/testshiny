@@ -28,11 +28,11 @@ jobs:
       # run the docker image supply the secrets from the github secrets store.  
       - name: execute
         run: docker run \
-        -e SHINY_ACC_NAME=${{ secrets.SHINY_ACC_NAME }} \
-        -e TOKEN=${{secrets.TOKEN}} \
-        -e SECRET=${{secrets.SECRET}} \
-        -e MASTERNAME=${{secrets.MASTER_NAME}} \
-        main
+              -e SHINY_ACC_NAME=${{ secrets.SHINY_ACC_NAME }} \
+              -e TOKEN=${{secrets.TOKEN}} \
+              -e SECRET=${{secrets.SECRET}} \
+              -e MASTERNAME=${{secrets.MASTER_NAME}} \
+              main
 
 
 
