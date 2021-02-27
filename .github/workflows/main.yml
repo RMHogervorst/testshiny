@@ -16,6 +16,11 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: Ubuntu-20.04
+    env:
+          SHINY_ACC_NAME: ${{ secrets.SHINY_ACC_NAME }}
+          TOKEN: ${{secrets.TOKEN}}
+          SECRET: ${{secrets.SECRET}}
+          MASTERNAME: ${{secrets.MASTER_NAME}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -25,13 +30,8 @@ jobs:
       # build the docker image and give it the name main
       - name: Build image
         run: docker build -t main . 
-      # run the docker image and supply the secrets from the github secrets store.  
+      # run the docker image (secrets are defined above) supply the secrets from the github secrets store.  
       - name: execute
-        env:
-          SHINY_ACC_NAME: ${{ secrets.SHINY_ACC_NAME }}
-          TOKEN: ${{secrets.TOKEN}}
-          SECRET: ${{secrets.SECRET}}
-          MASTERNAME: ${{secrets.MASTER_NAME}}
         run: docker run main
 
 
