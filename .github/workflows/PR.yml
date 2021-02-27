@@ -1,8 +1,7 @@
-# This is a basic workflow to help you get started with Actions
 
 name: PR
 
-# Controls when the action will run. 
+# Run on all pull requests
 on:
   pull_request: {}
 
@@ -21,9 +20,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # Build image
       - name: Build image
         run: docker build -t pullrequestimage . 
-        
+      # run the image (but supply the TESTNAME in stead of MASTERNAME, so the 
+      # app ends up in a different place.   
       - name: execute
-        run: docker run -e SHINY_ACC_NAME=${{secrets.SHINY_ACC_NAME}} -e TOKEN=${{secrets.TOKEN}} -e SECRET=${{secrets.SECRET}} -e MASTERNAME=${{secrets.TEST_NAME}} pullrequestimage
+        run: >
+          docker run 
+          -e SHINY_ACC_NAME=${{secrets.SHINY_ACC_NAME}} 
+          -e TOKEN=${{secrets.TOKEN}} 
+          -e SECRET=${{secrets.SECRET}} 
+          -e MASTERNAME=${{secrets.TEST_NAME}} 
+          pullrequestimage
